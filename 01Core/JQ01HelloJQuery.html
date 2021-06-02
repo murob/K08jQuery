@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../common/jquery/jquery-3.6.0.js"></script>
+<script>
+	/*
+	jQuery의 시작점을 표현하는 4가지 방식으로 해당 HTML문서가
+	모두 로드된 이후 실행하겠다는 의미를 가지고 있다. JS의 
+	onload이벤트와 비슷하다. 
+	*/
+	$(document).ready(function(){
+		alert("jQuery 시작하기1");
+	});
+	
+	$().ready(function(){
+		alert("jQuery 시작하기2");
+	});
+	
+	jQuery(function(){
+		alert("jQuery 시작하기3");
+	});
+	
+	$(function(){//간단하므로 가장 많이 사용됨
+		alert("jQuery 시작하기4");
+	});
+</script>
+</head>
+<body>
+	<h2>jQuery 시작하기</h2>
+	<script>
+		alert("HTML 문서의 끄읏~~~!!");
+	</script>
+</body>
+</html>

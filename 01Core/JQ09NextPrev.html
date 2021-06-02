@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQ09NextPrev.html</title>
+    <script src="../common/jquery/jquery-3.6.0.js"></script>
+    <script>
+      $(function () {
+        /*
+          prev() : 선택한 엘리먼트의 이전 엘리먼트를 선택한다.
+          next() : 다음 엘리먼트를 선택한다.
+        */
+        //button태그 중 id가 next인 엘리먼트
+        $("button#next").click(function () {
+          //li태그 중 class가 third인 엘리먼트
+          $("li.third").next().css("fontSize", "2em");
+          $("li.third").prev().css("backgroundColor", "blue");
+        });
+        $("button#prev").click(function () {
+          $("li.third").next().css("fontSize", "1.2em");
+          $("li.third").prev().css("backgroundColor", "yellow");
+        });
+
+        /*
+        eq(인덱스) : 선택한 요소가 여러개일 때 인덱스를 통해
+            개체를 얻어오는 메소드로 인덱스는 0부터 시작한다.
+        */
+        var i = 0;
+        var size = $("li").length; //li태그의 갯수
+        $("button#continue").click(function () {
+          //현재 선택된 이전 요소의 배경을 흰색으로 변경
+          $("li").eq(i).prev().css("backgroundColor", "white");
+          //현재 선택된 요소의 배경을 노란색으로 변경
+          $("li").eq(i).css("backgroundColor", "yellow");
+
+          //인덱스가 0이라면 마지막 요소의 배경을 흰색으로 변경
+          if (i == 0) {
+            $("li")
+              .eq(size - 1)
+              .css("backgroundColor", "white");
+          }
+          /*
+          li요소의 끝까지 index가 증가하면 처음으로 되돌리기 위해
+          0으로 초기화한다.
+          */
+          if (size - 1 == i) {
+            i = 0;
+          } else {
+            i++;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>next() / prev() 메소드</h2>
+
+    <button id="next">jQuery의 다음요소 얻어오기</button>
+    <button id="prev">jQuery의 이전요소 얻어오기</button>
+    <button id="continue">연속해서 배경색 바꾸기</button>
+
+    <ul>
+      <li>JAVA</li>
+      0번인덱스
+      <li>HTML5</li>
+      <li class="third">JSP->여기가third</li>
+      <li>jQuery</li>
+      <li>Spring</li>
+      4번인덱스
+    </ul>
+  </body>
+</html>
