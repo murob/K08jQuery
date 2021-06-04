@@ -13,10 +13,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NaverSearchAPI {
-
-    public static void main(String[] args) {
-        String clientId = "SVM3brXnBNPbRLh528IB"; //애플리케이션 클라이언트 아이디값"
-        String clientSecret = "vZuYZxvNlE"; //애플리케이션 클라이언트 시크릿값"
+	
+	public static void main(String[] args) {
+        String clientId = "Ph_2Da_aeob_OLYiChcG"; //애플리케이션 클라이언트 아이디값"
+        String clientSecret = "zydssfN2o9"; //애플리케이션 클라이언트 시크릿값"
 
 
         String text = null;
@@ -27,8 +27,8 @@ public class NaverSearchAPI {
         }
 
 
-//        String apiURL = "https://openapi.naver.com/v1/search/blog?query=" + text;    // json 결과
-        String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text; // xml 결과
+        //String apiURL = "https://openapi.naver.com/v1/search/blog?query=" + text;//json 결과
+        String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text;//xml 결과
 
 
         Map<String, String> requestHeaders = new HashMap<>();
